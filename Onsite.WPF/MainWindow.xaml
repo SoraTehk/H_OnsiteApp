@@ -7,6 +7,40 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <!-- Button row -->
+            <RowDefinition Height="*" />
+            <!-- Console row -->
+        </Grid.RowDefinitions>
+
+        <!-- Button + current image display -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center">
+            <Button x:Name="BrowseButton"
+                    Content="Browse Image"
+                    Width="120" Height="30"
+                    Click="BrowseButton_Click" />
+
+            <TextBlock x:Name="CurrentImageText"
+                       Margin="10,0,0,0"
+                       VerticalAlignment="Center"
+                       Text="No image selected"
+                       TextWrapping="Wrap" />
+        </StackPanel>
+
+        <!-- "Console" TextBox -->
+        <TextBox x:Name="ConsoleTextBox"
+                 Grid.Row="1"
+                 Margin="0,10,0,0"
+                 VerticalScrollBarVisibility="Auto"
+                 HorizontalScrollBarVisibility="Auto"
+                 IsReadOnly="True"
+                 FontFamily="Consolas"
+                 FontSize="14"
+                 TextWrapping="Wrap"
+                 Background="Black"
+                 Foreground="Lime"
+                 CaretBrush="Lime" />
     </Grid>
 </Window>
